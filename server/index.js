@@ -14,6 +14,7 @@ massive(process.env.CONNECTION_STRING)
   .catch(error => console.log('error', error));
 
 app.get('/api/movies', moviesController.get);
+app.post('/api/movies', moviesController.create);
 
 const SERVER_PORT = process.env.SERVER_PORT || 4050;
 app.listen(SERVER_PORT, () => console.log(`Server listening on ${SERVER_PORT}`));

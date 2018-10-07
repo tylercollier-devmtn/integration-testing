@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AddMovie from './AddMovie';
 
 export default class Movies extends Component {
   constructor() {
@@ -7,7 +8,8 @@ export default class Movies extends Component {
     this.state = {
       movies: null,
       loading: true,
-      error: null
+      error: null,
+      newMovieName: ''
     };
     this.fetchMovies = this.fetchMovies.bind(this);
   }
@@ -41,7 +43,7 @@ export default class Movies extends Component {
                 {movies.map(e => <li key={e.id}>{e.name}</li>)}
               </ul>  
         }
-        
+        <AddMovie onAdd={this.fetchMovies} />
       </div>
     );
   }
