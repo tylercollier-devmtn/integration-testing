@@ -1,6 +1,6 @@
 const movieData = require('./movieData');
 const sinon = require('sinon');
-const massive = require('massive');
+const testInit = require('../../test/init');
 
 describe('unit tests', () => {
   describe('create', () => {
@@ -28,7 +28,7 @@ describe('integration tests', () => {
   }
 
   beforeAll(() => {
-    return massive(process.env.TEST_CONNECTION_STRING).then(database => {
+    return testInit.initDb().then(database => {
       db = database;
     });
   });
@@ -38,7 +38,7 @@ describe('integration tests', () => {
   });
 
   describe('create', () => {
-    it.only('inserts a record into the database with a created_at date', () => {
+    it('inserts a record into the database with a created_at date', () => {
       const movieName = 'Test Movie Name';
       return movieData.create(db, { name: movieName })
       .then(() => {

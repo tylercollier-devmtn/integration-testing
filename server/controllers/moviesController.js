@@ -12,6 +12,7 @@ module.exports = {
     });
   },
   create(req, res) {
+    const newMovie = req.body;
     movieData.create(req.app.get('db'), newMovie)
     .then(addedMovies => {
       res.json(addedMovies[0]);

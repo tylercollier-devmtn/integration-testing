@@ -13,6 +13,10 @@ Copy `.env.example.env` to `.env`, and fill out values. `CONNECTION_STRING` is f
 
 * Run `npm run integration-tests`
 
+# What else?
+
+This project is purposefully not "perfectly refactored". Some of the code is not DRY. This is intentional to make it easier to understand. One would be reasonable in expecting some of the code to be DRY'ed up in a real project.
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
