@@ -28,7 +28,7 @@ describe('integration tests', () => {
   }
 
   beforeAll(() => {
-    return massive(process.env.CONNECTION_STRING).then(database => {
+    return massive(process.env.TEST_CONNECTION_STRING).then(database => {
       db = database;
     });
   });
