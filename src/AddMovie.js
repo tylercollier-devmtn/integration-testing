@@ -36,7 +36,7 @@ export default class AddMovie extends Component {
         <h2>New movie</h2>
         <div>
           New movie name: <input value={newMovieName} onChange={event => this.setState({ newMovieName: event.target.value })} />
-          <button onClick={this.createMovie} disabled={loading}>Add movie</button>
+          <button onClick={this.addMovie} disabled={loading}>Add movie</button>
           {error && <div>
             Error: {error.message}
           </div>}
