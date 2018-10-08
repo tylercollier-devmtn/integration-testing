@@ -7,7 +7,7 @@ module.exports = {
       res.json(movies);
     })
     .catch(error => {
-      console.log('error in dataController.get', error);
+      console.error('error in dataController.get', error);
       res.status(500).json({ message: 'There was an error on the server' });
     });
   },
@@ -18,7 +18,7 @@ module.exports = {
       res.json(addedMovies[0]);
     })
     .catch(error => {
-      console.log('error in dataController.create', error);
+      console.error('error in dataController.create', error);
       res.status(500).json({ message: 'There was an error on the server' });
     });
   }
