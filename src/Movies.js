@@ -39,9 +39,11 @@ export default class Movies extends Component {
           ? <div>There was an error fetching the list of movies</div>
           : loading
             ? <div>Loading movies...</div>
-            : <ul>
-                {movies.map(e => <li key={e.id}>{e.name}</li>)}
-              </ul>  
+            : movies.length
+                ? <ul>
+                    {movies.map(e => <li key={e.id}>{e.name}</li>)}
+                  </ul>
+                : <em>No movies</em>
         }
         <AddMovie onAdd={this.fetchMovies} />
       </div>
